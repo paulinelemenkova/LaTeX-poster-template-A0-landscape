@@ -1,0 +1,212 @@
+\documentclass[a0paper,landscape,final]{baposter}
+\usepackage{times}
+\usepackage{calc}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\usepackage{helvet}
+\usepackage{bookman}
+\usepackage{palatino}
+%\newcommand{\captionfont}{\footnotesize}
+%\selectcolormodel{cmyk}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{sidecap}
+\usepackage{enumitem}
+\usepackage{marvosym}
+%\usepackage{hyperref|
+\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Multicol Settings
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+%%% Begin of Document Poster of Polina Lemenkova %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\typeout{Poster Starts}
+\background{
+  \begin{tikzpicture}[remember picture,overlay]%
+    \draw (current page.north west)+(-2em,-0em) node[anchor=north west] {\hspace{-2em}\includegraphics[height=1.1\textheight]{silhouettes_background}};
+  \end{tikzpicture}%
+}
+\definecolor{silver}{cmyk}{0,0,0,0.2}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+\definecolor{lilac}{RGB}{188,157,234}
+\definecolor{lightlilac}{RGB}{226,212,247}
+\definecolor{myblue}{RGB}{123,171,247}
+\definecolor{darklilac}{RGB}{75,1,109}
+\definecolor{mygrey}{RGB}{201,220,234}
+\definecolor{lightgrey}{RGB}{202,219,247}
+\definecolor{lightyellow}{RGB}{247,243,192}
+\definecolor{lightlpurple}{RGB}{226,219,252}
+\definecolor{verylightlpurple}{RGB}{233,204,249}
+\definecolor{newblue}{RGB}{202,224,249}
+\definecolor{newsilver}{RGB}{217,231,244}
+
+
+\begin{poster}{
+  % Show grid to help with alignment
+ 	 grid=false,
+  % Column spacing
+  	colspacing=1em,
+  % Color style
+ 	bgColorOne=white,%
+  	bgColorTwo=newsilver,%
+ 	borderColor=myblue,%
+  	headerColorOne=myblue,%
+  	headerColorTwo=mygrey,%
+  	headerFontColor=black,
+  	boxColorOne=white,
+  	boxColorTwo=newblue,
+  % Format of textbox
+  	textborder=roundedleft,
+  % Format of text header
+  	eyecatcher=true,
+  	headerborder=open,
+  	headerheight=0.15\textheight,
+  	headershape=roundedright,
+  	headershade=shadelr,
+ 	headerfont=\large \bf\textsc, %Sans Serif
+  	textfont={\setlength{\parindent}{1.5em}},
+  	boxshade=shadelr, %plain,
+  	background=shadetb,
+  	linewidth=2pt
+  }
+  % Eye Catcher
+  {\includegraphics[height=4em]{TUD_logo.png}} 
+  % Title
+ {%\sf %Sans Serif 
+ \textsc{Clustering algorithm in ILWIS GIS for classification of \\ \vspace{4pt}Landsat TM scenes (Mecsek Hills region, Hungary)}}
+  % Authors
+ {\textsc{\textbf{Lemenkova} Polina\hspace{2pt}  \& \hspace{2pt} \textbf{Elek} Istv\'an}\\
+  \small Dresden University of Technology, Institute for Cartography (Germany); \hspace{1em} E\"otv\"os Lor\'and University (ELTE), Institute of Cartography, (Budapest, Hungary)\\
+ Contact \LARGE{\Letter}\normalsize: \color{blue}{Polina.Lemenkova@mailbox.tu-dresden.de} \hspace{3em} \color{black}This poster is made using \color{blue}\LaTeX}
+  %Polina.Lemenkova@mailbox.tu-dresden.de
+   % University logo
+     {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
+    \includegraphics[height=6em]{ELTE_logo.png}
+  }
+ % \end{minipage}}
+
+  \tikzstyle{light shaded}=[top color=baposterBGtwo!30!white,bottom color=baposterBGone!30!white,shading=axis,shading angle=30]
+
+  % Width of left inset image
+     \newlength{\leftimgwidth}
+     \setlength{\leftimgwidth}{0.78em+8.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Summary}{name=summary,column=0,row=0,textborder=roundedsmall,boxshade=shadetb}{
+Current research has been performed at E\"otv\"os Lor\'and University, Institute of Cartography. \vspace{2pt}
+\\ - \textsc{Research emphasis}: application of clustering spatial analysis of the open source ILWIS GIS. \\\vspace{2pt}- \textsc{Research aim}: agricultural mapping of land cover types: south-west Hungary, Mecsek Hills. \vspace{2pt}\\ - \textsc{Research process}: Landsat TM scenes were classified into different land use types: natural vegetation coverage, anthropogenic areas and agricultural fields, sub-divided to various crop types. \vspace{2pt}\\ - \textsc{Research output}: three independent agricultural thematic maps of land cover types for years\\ 1992, 1999 and 2006, created in ILWIS GIS.
+ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Study Area}{name=area,column=0,below=summary,textborder=faded}{
+  The study area is located in Mecsek Hills region, south-western Hungary ($45\,^{\circ}00'$N-$47\,^{\circ}00'$N; $17\,^{\circ}00'$E-$19\,^{\circ}00'$E) \vspace{3pt}.
+  \includegraphics[scale=0.22]{Hungary.jpg}\vspace{2pt}
+Environmental characteristics of the region:\vspace{2pt}\\
+- high land heterogeneity
+- mixed vegetation types
+- complex landscape structure
+- intense agricultural land use 
+- high environmental value\\
+The region is used for intensive agricultural works. The land cover types in the current area are: 
+\smaller \begin{wrapfigure}{r}{0.5\textwidth}
+ 	   \includegraphics[width=0.48\textwidth]{Mecsek_Hills_Pecs.jpg}
+	\end{wrapfigure} 
+\textbf{1) winter wheat \\ 2) spring barley \\ 3) maize for ensilage\\ 4) maize 5) sugar beet \\ 
+6) potato 7) other crops \\8) not agricultural areas \\ 9) oak and beech forests \\10) shrubland 11) water areas \\12)grassland 13) other land cover types}.
+}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+    \headerbox{Research Data}{name=data,column=1,span=1,row=0,textborder=faded}{
+  Landsat TM scenes (GeoTIFF), taken on 14.09.1992, 09.08.1999 and 19.07.2006
+.\vspace{2pt}
+     \begin{tabular}{@{}c@{ }c@{ }c@{ }c@{}@{ }@{ }c@{ }c@{ }c@{ }c@{ }}
+    \includegraphics[scale=0.08]{Fig-1992.jpg}&
+    \includegraphics[scale=0.08]{Fig-1999.jpg}&
+    \includegraphics[scale=0.08]{Fig-2006.jpg}\\%[-0.8em]
+    \smaller a) 1992 & \smaller b) 1999 & \smaller c) 2006\\[0.8em]
+  \end{tabular}\\
+ The data were acquired from the Global Land Cover Facility (GLCF) web application.}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Methods}{name=methods,column=1,below=data,textborder=rectangle,boxshade=shadetb}{
+The research methodology is based on cluster classification algorithm available in ILWIS GIS. The work is organized in several research steps summarized in the research workflow: 
+\includegraphics[scale=0.18]{Fig-Flow.jpg}\\
+The research area was classified into a set of land cover categories, labeled to following land units: 
+ \textit{1) winter wheat 2) spring barley, 3) maize 4) sugar beet 5) maize for ensilage 6) oak and beech forests 7) potato 8) other crops 9) shrubland 10) water 11) not agricult. areas 12) grassland 13) other land cover types} \\
+Field crops (e.g. maize, winter wheat) were detected on the images. The species with unclear nature of crop  or not easily recognized were defined as 'other crops'. A Google Earth aerial imagery was used for visual control inspection.\\
+Once all clusters are grouped, the layout was created using representation palette defined in the domain 'Land Cover Types. The research results in 3 maps of land cover types for 1992, 1999 and 2006.\\\vspace{1pt}
+Clustering method can be applied for other agricultural areas, since it enables
+objective classification in regions with high land heterogeneity
+and complex landscape structure.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Acknowledgement}{name=acknowledgements,column=1,span=2,below=methods,above=bottom,textborder=faded}{
+ {\smaller We thankfully acknowledge financial support of the current research, provided by the Balassi Institute, HSB \\(Hungarian State Scholarship Border), Budapest, Hungary. Reference \# M\"OB/154-2/2011 (Scholarship type B)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Clustering}{name=clustering,column=2,span=1,row=0,textborder=faded}{
+ The research method is based on the cluster classification of Landsat scenes in ILWIS GIS.
+ \begin{itemize}\itemsep0.5pt
+ %[itemsep=0.2pt,parsep=0.02pt]
+\item \textsc{Usage} Clustering is algorithm of unsupervised multispectral cluster classification, performed in semiautomated regime in ILWIS GIS. Clustering is an iteration process which groups pixels into clusters.\\
+	 \includegraphics[height=0.33\linewidth]{Clustering}
+	 \includegraphics[scale=0.16]{Histogram-92.png}\vspace{2pt}\\
+\textit{a) Clustering menu,  b) Histogram of land cover classes, 1992.}
+\item \textsc{Principle} Clustering is based on principle of spectral distinguishability of digital cells. The Digital Numbers (DNs) of pixels create unique spectral signatures for various objects. Clustering extracts info on pixels and analyzes similarity of their DNs. Pixels with similar value of DNs are assigned to thematic categories (clusters). The grouping is done according to pixels' similarity, which is larger within a group than among other groups. \\
+ 	\includegraphics[scale=0.12]{screenshot.png}\\
+	 \textit{Patterns of various land cover types. Fragment of Landsat TM color composite, ILWIS GIS menu}
+\item \textsc{Advantages} Clustering is objective technique, useful in situations when fieldwork is not available. It enables to avoid misclassified pixels and ignore external factors (e.g. atmospheric conditions), which significantly facilitates spatial analysis of the images. 
+ \end{itemize}	
+}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Results}{name=results,column=3,row=0,textborder=coils,linewidth=1pt}{
+	\centering\includegraphics[scale=0.2]{Map-1992.png}\\ 
+    	\centering \includegraphics[scale=0.2]{Map-1999.png}\\
+	\centering \includegraphics[scale=0.2]{Map-2006.png}\\ 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{References}{name=references,column=3,below=results,above=bottom,boxshade=shadetb,textborder=roundedright}{
+\begin{enumerate} \tiny     %\vspace{0.1pt}
+\item Csornai G, Wirnhardt Cs., Suba Zs., N\'ador G., Tik\'asz L., Martinovich L., Kocsis A., Zelei Gy., L\'aszl\'o
+I., Bogn\'arornai E. 2008. Cropmon: Hungarian Crop Production Forecast by Remote Sensing.
+ISPRS Archives XXXVI-8/W48 Workshop proceedings: Remote sensing support to crop
+yield forecast and area estimates.
+\item Jensen, J.R. 2007. Remote Sensing of the Environment: An Earth Resource Perspective, 2nd Edition.
+ISBN-10: 0131889508. Prentice-Hall, Inc.: Upper Saddle River, New Jork.
+\item Julien Y., Sobrino J.A., Jim\'enez-Munoz J.-C. 2011. Land use classification from multitemporal
+Landsat imagery using the Yearly Land Cover Dynamics (YLCD) method. International
+Journal of Applied Earth Observation and Geoinformation 13, 711-720.
+\item Knorn J., Rabe A., Radeloff V.C., Kuemmerle T., Kozak J., Hostert P. 2009. Land cover mapping of
+large areas using chain classification of neighboring Landsat satellite images. Remote Sensing
+of Environment 113, 957-964.
+\item Wulder M., White J.C., Goward S.N., Masek J.G. , Irons J.R., Herold M., Cohen W.B. , Loveland
+T.R., Woodcock C.E. 2008. Landsat continuity: Issues and opportunities for land cover
+monitoring. Remote Sensing of Environment 112, 955-969.
+\end{enumerate}
+}  
+
+\end{poster}%
+%
+\end{document}
